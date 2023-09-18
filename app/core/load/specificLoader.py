@@ -1,5 +1,6 @@
 from pandas import read_csv
 from unidecode import unidecode
+import os
 
 class Loader:
     def __init__(self):
@@ -7,7 +8,8 @@ class Loader:
         self.data_list: list = None 
 
     def loadData(self, *datasName: str):
-        path = './resources/data/'
+        print(os.getcwd())
+        path = 'app/resources/data/'
         data_list = list()
         for dataName in datasName:
             data = read_csv(path + dataName, sep=',', encoding='latin1', header=0)
@@ -39,7 +41,7 @@ class Loader:
                 # data = data.iloc[0:3500]
             # if dataName == 'regimen.csv':
             #     data = data.iloc[0]
-            datas.append(data)
+            data_list.append(data)
             setattr(self, dataName[:-4], data)
         self.data_list = data_list
 

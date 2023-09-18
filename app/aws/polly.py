@@ -328,8 +328,8 @@ class PollyWrapper:
 	
 def main():
 	credentials = {
-		"aws_access_key_id": "AKIAVT4UAXVZTDCQFNSI",
-		"aws_secret_access_key": "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",
+		"aws_access_key_id": "",
+		"aws_secret_access_key": "",
 		"aws_session_token": ""
 	}
 	object_polly = PollyWrapper(credentials)

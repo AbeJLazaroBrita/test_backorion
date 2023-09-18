@@ -1,5 +1,5 @@
-from core.load.specificLoader import Loader
-from core.load.loadModel import PandasAIModel
+from app.core.load.specificLoader import Loader
+from app.core.load.loadModel import PandasAIModel
 
 #Load datas
 Datas = Loader()

@@ -20,7 +20,7 @@ class PandasAIModel:
         elif type_ == 'falcon':
             llm = Falcon(api_token="hf_XDdnKDSemLVkpBbBaC")
 
-        self.model = PandasAI(llm, conversational=False)
+        self.model = PandasAI(llm, conversational=False, enable_cache=False)
         
         self.chatGPT = chatGPT(tokenOpenAi)
         self.data = data
