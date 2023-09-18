@@ -12,7 +12,7 @@ class PandasAIModel:
 
     def __init__(self, type_:str, data: Loader) -> None:
         """Docstring."""
-        tokenOpenAi = "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"
+        tokenOpenAi = "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"
         if type_ == 'openai':
             llm = OpenAI(api_token=tokenOpenAi)
         elif type_ == 'google':
@@ -34,7 +34,6 @@ class PandasAIModel:
             question = question.replace("hoy", currentDate)
 
         not_able = 'Unfortunately, I was not able to answer your question,'
-
         for i in range(2):
             response = str(self.model.run(datas, question))
             if not_able not in response:
