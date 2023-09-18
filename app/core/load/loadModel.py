@@ -12,7 +12,7 @@ class PandasAIModel:
 
     def __init__(self, type_:str, data: Loader) -> None:
         """Docstring."""
-        tokenOpenAi = "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"
+        tokenOpenAi = "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"
         if type_ == 'openai':
             llm = OpenAI(api_token=tokenOpenAi)
         elif type_ == 'google':
@@ -32,10 +32,11 @@ class PandasAIModel:
             currentDate = datetime.datetime.now()
             currentDate = currentDate.strftime('%d de %B del %Y')
             question = question.replace("hoy", currentDate)
-
+        print(question)
         not_able = 'Unfortunately, I was not able to answer your question,'
         for i in range(2):
             response = str(self.model.run(datas, question))
+            print(response)
             if not_able not in response:
                 question = 'si el siguiente texto está en inglés regresa un "si": ' + response
                 answer = self.chatGPT.get_completion(question)
