@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  api:
+    image: mariavmasmas
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: "unless-stopped"
+    networks:
+      - "orionapp"
+    volumes:
+      - ./app:/app/app
+    ports:
+      - "5003:8080"
+
+
+networks:
+  orionapp:

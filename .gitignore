@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+.vscode/
+.env
+
+# caché
+__pycache__/
+
+# resources
+resources/
+.vscode/launch.json
+Documents/Preguntas sugeridas para la base de documentos.docx
+
+venv/
+documents.json
+pandasai.log
+cache/
