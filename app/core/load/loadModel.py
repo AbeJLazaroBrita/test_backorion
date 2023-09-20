@@ -4,6 +4,7 @@ from pandasai.llm.google_palm import GooglePalm
 from pandasai.llm.falcon import Falcon
 import datetime
 import re
+import os
 from app.core.load.loadChatGPT import chatGPT
 from app.core.load.specificLoader import Loader
 
@@ -12,7 +13,7 @@ class PandasAIModel:
 
     def __init__(self, type_:str, data: Loader) -> None:
         """Docstring."""
-        tokenOpenAi = "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"
+        tokenOpenAi = os.getenv("OPENAITOKEN", "")
         if type_ == 'openai':
             llm = OpenAI(api_token=tokenOpenAi)
         elif type_ == 'google':
